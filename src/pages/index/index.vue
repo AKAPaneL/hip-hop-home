@@ -1,8 +1,19 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+		<view class="banner">
+			<uni-swiper-dot :info="info" mode="round" :bottom="100">
+				<swiper class="swiper" circular autoplay :interval="interval" :duration="duration">
+					<swiper-item>
+						<view class="swiper-item">A</view>
+					</swiper-item>
+					<swiper-item>
+						<view class="swiper-item">B</view>
+					</swiper-item>
+					<swiper-item>
+						<view class="swiper-item">C</view>
+					</swiper-item>
+				</swiper>
+			</uni-swiper-dot>
 		</view>
 	</view>
 </template>
@@ -11,7 +22,10 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				info:[1,2,3],
+				indicatorDots: true,
+				interval:5000,
+				duration:500
 			}
 		},
 		onLoad() {
@@ -23,27 +37,27 @@
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.banner{
+		width: 100vw;
+		height: 45vw;
+		.swiper{
+			height: 100%;
+		}
+		swiper-item{
+			box-sizing: border-box;
+			padding: 5vw;
+		}
+		.swiper-item{
+			display: block;
+			height: 100%;
+			background-color:red;
+		}
 	}
 </style>
