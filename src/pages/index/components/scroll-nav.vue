@@ -1,12 +1,15 @@
 <template>
   <view class="scroll-nav-container">
-    <scroll-view scroll-x class="scroll-nav" :show-scrollbar="scroll">
-        <view v-for="item in navList" :key="item.id" class="nav-item">
-            <image class="nav-img" :src="item.url" lazy-load="true"/>
-            <text>{{ item.text }}</text>
+    <scroll-view scroll-x class="scroll-nav">
+        <view class="scroll-nav-List">
+            <view v-for="item in navList" :key="item.id" class="nav-item">
+                <image class="nav-img" :src="item.url" lazy-load="true"/>
+                <text>{{ item.text }}</text>
+            </view>
         </view>
     </scroll-view>
   </view>
+  
 </template>
 
 <script>
@@ -17,7 +20,6 @@ import video from '../../../static/nav/video.png'
 export default {
     data(){
         return{
-            scroll:false,
             navList:[
                 {id:1,text:'热门厂牌',url:myMusic},
                 {id:2,text:'专辑',url:album},
@@ -33,22 +35,23 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+
 .scroll-nav-container{
-    width: 100%;
-    height: 12vw;
+    width: 100vw;
     color: black;
     font-size: 12px;
-    /* overflow: hidden; */
 }
-.scroll-nav::v-deep .uni-scroll-view-content{
+.scroll-nav .scroll-nav-List{
     display: flex;
     align-items: center;
     height: 12vw;
     width: 120vw;
 }
+/* #ifdef H5 */
 .scroll-nav::v-deep .uni-scroll-view::-webkit-scrollbar{
     display: none;
 }
+/* #endif */
 .scroll-nav{
     .nav-item{
         flex-shrink: 0;
@@ -64,6 +67,5 @@ export default {
         }
     }
 }
-
 
 </style>
