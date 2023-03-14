@@ -2,7 +2,7 @@
   <view class="scroll-nav-container">
     <scroll-view scroll-x class="scroll-nav">
         <view class="scroll-nav-List">
-            <view v-for="item in navList" :key="item.id" class="nav-item">
+            <view v-for="item in navList" :key="item.id" class="nav-item" @click="handleClick">
                 <image class="nav-img" :src="item.url" lazy-load="true"/>
                 <text>{{ item.text }}</text>
             </view>
@@ -30,7 +30,11 @@ export default {
             ]
         }
     },
-    mounted(){
+    methods:{
+        // 处理菜单点击
+        handleClick(){
+            console.log('处理nav-scroll点击');
+        }
     }
 }
 </script>
@@ -39,7 +43,7 @@ export default {
 .scroll-nav-container{
     width: 100vw;
     color: black;
-    font-size: 12px;
+    font-size: 3.2vw;
 }
 .scroll-nav .scroll-nav-List{
     display: flex;

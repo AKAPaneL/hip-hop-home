@@ -7,7 +7,7 @@
 			}
 		},
 		{
-			"path": "pages/mine/mine",
+			"path": "pages/mine/index",
 			"style": {
 				"navigationBarTitleText": "个人中心"
 			}
@@ -23,7 +23,7 @@
 		"color": "#fff",
 		"selectedColor": "#F3E5F5",
 		"borderStyle": "black",
-		"backgroundColor": "#AB47BC",
+		"backgroundColor": "#EC407A",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"iconPath": "static/tabbar/index.png",
