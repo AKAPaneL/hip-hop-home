@@ -1,4 +1,4 @@
-# hip-pop-home
+# hip-hop-home
 
 ## Project setup
 ```
